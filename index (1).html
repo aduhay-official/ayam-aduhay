@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ayam Aduhay - Ceker, Sayap & Piscok Mantul</title>
+  <meta name="description" content="Ayam Aduhay - Ceker, sayap pedas dan tidak pedas, plus piscok manis. Area Sawah, Banyuraden, Gamping, Sleman. Pesan via WhatsApp 0858-4768-4582 (@kedai.aduhay)." />
+  <style>
+    :root { --primary:#ff6b35; --primary-dark:#e45720; --secondary:#ffe8c8; --bg:#fff9f3; --text:#2b2b2b; --accent:#ffd166;}
+    *{box-sizing:border-box;margin:0;padding:0;}
+    body{font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;background:var(--bg);color:var(--text);line-height:1.6;}
+    a{text-decoration:none;color:inherit;}
+    .navbar{position:sticky;top:0;z-index:20;backdrop-filter:blur(12px);background:rgba(255,249,243,0.93);border-bottom:1px solid rgba(0,0,0,0.03);}
+    .nav-inner{max-width:1080px;margin:0 auto;padding:0.75rem 1.25rem;display:flex;align-items:center;justify-content:space-between;gap:1rem;}
+    .brand{display:flex;align-items:center;gap:0.6rem;}
+    .brand-logo{width:40px;height:40px;border-radius:999px;background:radial-gradient(circle at 30% 20%,#ffe8c8,#ff6b35);display:flex;align-items:center;justify-content:center;font-weight:800;font-size:1.1rem;color:#fff;box-shadow:0 4px 10px rgba(0,0,0,0.15);}
+    .brand-text-title{font-weight:800;font-size:1.2rem;}
+    .brand-text-sub{font-size:0.75rem;color:#777;margin-top:-2px;}
+    .nav-cta{display:flex;align-items:center;gap:0.75rem;font-size:0.85rem;}
+    .nav-cta span{display:none;}
+    .btn{display:inline-flex;align-items:center;justify-content:center;padding:0.6rem 1.1rem;border-radius:999px;border:none;cursor:pointer;font-size:0.9rem;font-weight:600;transition:0.15s ease;white-space:nowrap;}
+    .btn-primary{background:var(--primary);color:#fff;box-shadow:0 8px 18px rgba(255,107,53,0.35);}
+    .btn-primary:hover{background:var(--primary-dark);transform:translateY(-1px);}
+    .btn-outline{background:transparent;border:1px solid var(--primary);color:var(--primary);}
+    .btn-outline:hover{background:var(--secondary);}
+    .hero{max-width:1080px;margin:0 auto;padding:2.5rem 1.25rem 2rem;display:grid;grid-template-columns:1.1fr 0.9fr;gap:2rem;align-items:center;}
+    .hero-badge{display:inline-flex;align-items:center;gap:0.4rem;background:var(--secondary);padding:0.25rem 0.7rem;border-radius:999px;font-size:0.75rem;font-weight:600;margin-bottom:0.8rem;}
+    .hero-badge-dot{width:8px;height:8px;border-radius:999px;background:#10b981;box-shadow:0 0 0 6px rgba(16,185,129,0.2);}
+    .hero-title{font-size:clamp(2.1rem,3.1vw,3rem);font-weight:800;margin-bottom:0.75rem;}
+    .hero-highlight{color:var(--primary);}
+    .hero-subtitle{font-size:0.98rem;color:#555;margin-bottom:1.2rem;max-width:450px;}
+    .hero-cta-group{display:flex;flex-wrap:wrap;gap:0.7rem;margin-bottom:1rem;}
+    .hero-note{font-size:0.8rem;color:#777;}
+    .hero-rating{display:flex;align-items:center;gap:0.3rem;font-size:0.8rem;margin-top:0.35rem;color:#444;}
+    .hero-image-wrap{position:relative;padding:1.5rem;}
+    .hero-photo{border-radius:1.2rem;overflow:hidden;box-shadow:0 16px 40px rgba(0,0,0,0.25);margin-bottom:0.85rem;}
+    .hero-photo img{width:100%;height:220px;object-fit:cover;display:block;}
+    .hero-card{background:linear-gradient(135deg,#fff,#ffe8c8);border-radius:1.5rem;padding:1.25rem;box-shadow:0 16px 40px rgba(0,0,0,0.18);position:relative;}
+    .hero-card-title{font-weight:700;margin-bottom:0.3rem;}
+    .hero-card-sub{font-size:0.8rem;color:#555;margin-bottom:0.7rem;}
+    .hero-chicken{font-size:2.3rem;text-align:center;margin:0.35rem 0 0.7rem;}
+    .chip{padding:0.2rem 0.55rem;border-radius:999px;background:rgba(255,255,255,0.7);border:1px solid rgba(255,255,255,0.8);font-size:0.7rem;}
+    .chip.spicy{background:rgba(239,68,68,0.12);border-color:rgba(239,68,68,0.4);color:#b91c1c;}
+    .hero-price-tag{position:absolute;right:1rem;top:1rem;background:#111827;color:#fff;padding:0.35rem 0.7rem;border-radius:999px;font-size:0.75rem;font-weight:600;}
+    .hero-sticker{position:absolute;left:-12px;bottom:8px;background:var(--primary);color:#fff;padding:0.35rem 0.7rem;font-size:0.75rem;font-weight:700;border-radius:0 999px 999px 0;}
+    .section{max-width:1080px;margin:0 auto;padding:1rem 1.25rem 2.5rem;}
+    .section-header{display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:0.75rem;margin-bottom:1.25rem;}
+    .section-title{font-weight:700;font-size:1.2rem;}
+    .section-sub{font-size:0.85rem;color:#777;}
+    .gallery-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:0.75rem;margin-top:0.5rem;}
+    .gallery-item{border-radius:0.9rem;overflow:hidden;box-shadow:0 10px 24px rgba(0,0,0,0.06);}
+    .gallery-item img{width:100%;height:170px;object-fit:cover;}
+    .gallery-caption{font-size:0.75rem;padding:0.4rem;background:#fff;}
+    .footer{text-align:center;padding:1rem;color:#888;font-size:0.78rem;}
+  </style>
+</head>
+<body>
+
+<header class="navbar">
+  <div class="nav-inner">
+    <div class="brand">
+      <div class="brand-logo">AA</div>
+      <div>
+        <div class="brand-text-title">Ayam Aduhay</div>
+        <div class="brand-text-sub">Ceker, sayap & piscok bikin nagih</div>
+      </div>
+    </div>
+    <div class="nav-cta">
+      <a href="https://wa.me/6285847684582" class="btn btn-primary">Pesan Sekarang</a>
+    </div>
+  </div>
+</header>
+
+<section class="hero">
+  <div>
+    <div class="hero-badge"><span class="hero-badge-dot"></span> Order buka • Siap antar</div>
+    <h1 class="hero-title"><span class="hero-highlight">Ayam Aduhay</span>, Pedasnya Nampol!</h1>
+    <p class="hero-subtitle">Ceker & sayap pedas/non pedas + piscok lumer.</p>
+  </div>
+
+  <div class="hero-image-wrap">
+    <div class="hero-photo">
+      <img src="sayap.jpg" alt="Sayap pedas Ayam Aduhay" />
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="section-header">
+    <h2 class="section-title">Foto Asli Ayam Aduhay</h2>
+    <p class="section-sub">Foto real dari dapur Ayam Aduhay.</p>
+  </div>
+
+  <div class="gallery-grid">
+    <div class="gallery-item">
+      <img src="piscok.jpg" alt="Piscok" />
+      <div class="gallery-caption">Piscok coklat lumer.</div>
+    </div>
+
+    <div class="gallery-item">
+      <img src="ceker.jpg" alt="Ceker pedas" />
+      <div class="gallery-caption">Ceker pedas nampol!</div>
+    </div>
+
+    <div class="gallery-item">
+      <img src="ceker-box.jpg" alt="Ceker box" />
+      <div class="gallery-caption">Ceker ready order.</div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  © 2025 Ayam Aduhay • IG: @kedai.aduhay
+</footer>
+
+</body>
+</html>
